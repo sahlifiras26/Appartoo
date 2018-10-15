@@ -21,8 +21,7 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository('AppBundle:extraterrestre')->find($id);
         
-        // $form=$this->createForm('Test\BlogBundle\Form\testType',$test);
-        // $form->handleRequest($request);
+        
         if ($request->isMethod('POST')) {
 
             $em=$this->getDoctrine()->getManager();
@@ -34,16 +33,7 @@ class DefaultController extends Controller
             $em->flush($user);
             
         }
-        // if($form->isSubmitted() && $form->isValid()){
-        //     $em=$this->getDoctrine()->getManager();
-        //     $em->persist($test);
-        //     $em->flush($test);
-        //     return $this->redirectToRoute('Liste');
-        // }
-        // return $this->render('TestBlogBundle:Posts:create.html.twig',array(
-        //     'test'=>$test,
-        //     'form'=>$form->CreateView(),
-        // )) ;
+        
         return $this->render('@App/editProfile.html.twig',array('user'=>$user)) ;
     }
     

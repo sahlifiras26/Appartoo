@@ -47,6 +47,8 @@ class extraterrestre extends BaseUser
      */
     protected $nourriture;
 
+    
+
 
 
      /**

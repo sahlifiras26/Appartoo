@@ -8,3 +8,7 @@ fos_user:
 Edit:
     path:     /edit/{id}
     defaults: { _controller: AppBundle:Default:edit }   
+
+ListeAmis:
+    path:     /listAmis
+    defaults: { _controller: AppBundle:Default:list }   

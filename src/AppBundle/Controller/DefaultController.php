@@ -36,5 +36,10 @@ class DefaultController extends Controller
         
         return $this->render('@App/editProfile.html.twig',array('user'=>$user)) ;
     }
-    
+    public function listAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $users = $em->getRepository('AppBundle:extraterrestre')->findAll();
+        return $this->render("@App/listAmis.html.twig",array('users'=>$users));
+    }
 }

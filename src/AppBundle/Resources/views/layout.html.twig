@@ -10,7 +10,8 @@
                                                 {{ 'famille'|trans }}: {{ app.user.famille }}</br>
                                                {{ 'nourriture'|trans }}: {{ app.user.nourriture }}</br>
                                                 {{ 'age'|trans }}: {{ app.user.age }} </br> 
-                                                <a href="{{ path('Edit',{'id':app.user.id}) }}">Modifuer profil</a>  </br>
+                                                <a href="{{ path('Edit',{'id':app.user.id}) }}">Modifuer profil</a> </br>
+                                                <a href="{{ path('ListeAmis')}}" >Liste profil</a>  </br>
                                                 |  <a href="{{ path('fos_user_security_logout') }}">
                                                 
                                                 <div class="fos_user_user_show">

@@ -42,4 +42,29 @@ class DefaultController extends Controller
         $users = $em->getRepository('AppBundle:extraterrestre')->findAll();
         return $this->render("@App/listAmis.html.twig",array('users'=>$users));
     }
+    public function addAction(Request $request, $id)
+	{
+		$user = $this->getUser();
+		
+		$em = $this->getDoctrine()->getManager();
+		$ex = $em->getRepository('AppBundle:extraterrestre')->find($id);
+		$user->ajouterAmis($ex);
+		$em->persist($user);
+		$em->flush($user);
+		$users = $em->getRepository('AppBundle:extraterrestre')->findAll();
+		return $this->render('@App/listAmis.html.twig', array('users' => $users));
+		
+    }
+    public function deleteAction(Request $request, $id)
+	{
+		$user = $this->getUser();
+		$em = $this->getDoctrine()->getManager();
+		$ex = $em->getRepository('AppBundle:extraterrestre')->find($id);
+		$user->supprimerAmis($ex); 
+		$em->persist($user);
+		$em->flush($user);
+        $users = $em->getRepository('AppBundle:extraterrestre')->findAll();
+		return $this->render('@App/listAmis.html.twig', array('users' => $users));
+		
+	}
 }

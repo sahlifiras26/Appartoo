@@ -1,3 +1,6 @@
+{% extends "AppBundle::layout.html.twig" %}
+
+{% block content %}
 <h1>Liste des utilisateurs</h1>
 
 <table border="1">
@@ -8,9 +11,10 @@
         <td>famille</td>
         <td>couleure</td>
         <td>email</td>
-        {# <td>Action</td> #}
+        <td>Action</td>
     </tr>
     {% for user in users %}
+    {% if app.user.getId != user.id %}
     <tr>
         <td>{{user.username}}</td>
         <td>{{user.age}}</td>
@@ -18,7 +22,12 @@
         <td>{{user.famille}}</td>
         <td>{{user.couleur}}</td>
         <td>{{user.email}}</td>
-        {# <td><a href="{{ path('Detail',{'id':user.id}) }}">visiter</a></td> #}
+        <td><a href="{{ path('add', {'id': user.id}) }}">
+                    Ajouter Amis
+                </a></td>
     </tr>
+    {% endif %}
     {% endfor %}
 </table>
+
+{% endblock content %}

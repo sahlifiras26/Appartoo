@@ -3,6 +3,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -48,7 +49,21 @@ class extraterrestre extends BaseUser
     protected $nourriture;
 
     
-
+    /**
+	 * @ORM\ManyToMany(targetEntity="AppBundle\Entity\extraterrestre", cascade={"persist"})
+	 */
+    private $amis;
+    
+    
+	/**
+	 * Get amis
+	 *
+	 * @return string
+	 */
+	public function getAmis()
+	{
+		return $this->amis;
+	}
 
 
      /**
@@ -161,5 +176,19 @@ class extraterrestre extends BaseUser
     {
         parent::__construct();
         // your own logic
+        $this->amis = new ArrayCollection();
+    }
+    public function ajouterAmis(extraterrestre $ex)
+	{
+		if ($this->amis->contains($ex)) 
+		{
+			return;
+		}
+		$this->amis[] = $ex;
+		$ex->ajouterAmis($this);
+	}
+	public function supprimerAmis(extraterrestre $ex)
+	{
+        // cette methode n'a pas marchée. elle genere une erreure
     }
 }

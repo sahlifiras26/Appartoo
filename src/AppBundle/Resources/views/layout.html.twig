@@ -22,8 +22,8 @@
                                             {% else %}
                                                 <a href="">Login</a>
                                                 <div class="login-form">
-                                                    <h4>Loginn</h4>
-                                                    {{ render(controller('FOSUserBundle:Security:login')) }}
+                                                    <h4>Login</h4>
+                                                    <a href="{{ path('fos_user_security_login') }}">login</a>
                                                 </div>
                                             {% endif %}
 

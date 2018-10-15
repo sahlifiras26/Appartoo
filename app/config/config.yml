@@ -77,6 +77,9 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
     user_class: AppBundle\Entity\extraterrestre
+    registration:
+        form:
+            type: AppBundle\Form\RegistrationType
     from_email:
         address: firas.sahli@esprit.tn
         sender_name: Firas

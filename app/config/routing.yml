@@ -1,0 +1,10 @@
+app:
+    resource: '@AppBundle/Controller/'
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+Edit:
+    path:     /edit/{id}
+    defaults: { _controller: AppBundle:Default:edit }   

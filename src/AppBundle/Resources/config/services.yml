@@ -1,0 +1,4 @@
+services:
+    #redirect.after.login:
+            #class: Host\ForumBundle\Redirection\AfterLoginRedirection
+            #arguments: ["@router"]

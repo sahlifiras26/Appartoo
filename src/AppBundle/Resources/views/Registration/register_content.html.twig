@@ -1,0 +1,45 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+<div class="form-group" id="fos_user_registration_form">
+    <div class="contact-form-area fix ptb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h4 class="details-title text-center mb-43">Registration</h4>
+                    {{ form_widget(form.email, { 'attr': {'class': 'mb-22', 'placeholder': 'email'|trans } }) }}
+                    {{ form_errors(form.email) }}
+</br>
+                    {{ form_widget(form.username, { 'attr': {'class': 'mb-22', 'placeholder': 'username'|trans } }) }}
+                    {{ form_errors(form.username) }}
+</br>
+                    {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'a', 'placeholder': 'password'|trans } }) }}
+                    {{ form_errors(form.plainPassword.first) }}
+</br>
+                    {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'mb-22', 'placeholder': 'password_confirmation'|trans } }) }}
+                    {{ form_errors(form.plainPassword.second) }}
+</br>
+                    {{ form_widget(form.age, { 'attr': {'class': 'mb-22', 'placeholder': 'form.age'|trans } }) }}
+                    {{ form_errors(form.age) }}
+                    </br>
+                    {{ form_widget(form.couleur, { 'attr': {'class': 'mb-22', 'placeholder': 'couleur'|trans } }) }}
+                    {{ form_errors(form.couleur) }}
+                    </br>
+                    {{ form_widget(form.famille, { 'attr': {'class': 'mb-22', 'placeholder': 'famille'|trans } }) }}
+                    {{ form_errors(form.famille) }}
+                    </br>
+                    {{ form_widget(form.nourriture, { 'attr': {'class': 'mb-22', 'placeholder': 'nourriture'|trans } }) }}
+                    {{ form_errors(form.nourriture) }}
+                    </br>
+
+                    {{ form_rest(form) }}
+                    <div>
+                        <input class="button submit-btn lemon mt-35" type="submit" value="{{ 'submit'|trans }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ form_end(form) }}

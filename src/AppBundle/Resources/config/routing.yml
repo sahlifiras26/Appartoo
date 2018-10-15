@@ -1,0 +1,7 @@
+App_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
+
+Edit:
+    path:     /edit/{id}
+    defaults: { _controller: AppBundle:Default:edit }     

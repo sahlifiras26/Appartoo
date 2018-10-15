@@ -1,0 +1,25 @@
+{% extends "AppBundle::layout.html.twig" %}
+
+{% block content %}
+
+
+<h4>Modifier profile</h4>
+
+
+<form method="POST">
+{# id:<br>
+  <input type="text" name="id" placeholder="contenu" value="{{user.id}}" hidden> #}
+  age:<br>
+  <input type="text" name="age" placeholder="contenu" value="{{user.age}}">
+  <br>
+  famille:<br>
+  <input type="text" name="famille" placeholder="famille" value="{{user.famille}}"><br>
+  couleur:<br>
+  <input type="text" name="couleur" placeholder="couleur" value="{{user.couleur}}"><br>
+  nourriture:<br>
+  <input type="text" name="nourriture" placeholder="nourriture" value="{{user.nourriture}}">
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+{% endblock content %}

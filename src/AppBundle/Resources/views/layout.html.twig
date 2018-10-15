@@ -1,0 +1,44 @@
+<h1>Welcome to extraterrestre APPARTOO</h1>
+<ul class="login">
+                                        <li>
+
+                                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                                {{ app.user.username }} </br>
+                                                {{ 'username'|trans }}: {{ app.user.username }}</br>
+                                                {{ 'email'|trans }}: {{ app.user.email }}</br>
+                                                {{ 'couleur'|trans }}: {{ app.user.couleur }}</br>
+                                                {{ 'famille'|trans }}: {{ app.user.famille }}</br>
+                                               {{ 'nourriture'|trans }}: {{ app.user.nourriture }}</br>
+                                                {{ 'age'|trans }}: {{ app.user.age }} </br> 
+                                                <a href="{{ path('Edit',{'id':app.user.id}) }}">Modifuer profil</a>  </br>
+                                                |  <a href="{{ path('fos_user_security_logout') }}">
+                                                
+                                                <div class="fos_user_user_show">
+                                                
+</div>
+
+                                                {{ 'logout'|trans({},'FOSUserBundle') }}
+                                            </a>
+                                            {% else %}
+                                                <a href="">Login</a>
+                                                <div class="login-form">
+                                                    <h4>Loginn</h4>
+                                                    {{ render(controller('FOSUserBundle:Security:login')) }}
+                                                </div>
+                                            {% endif %}
+
+                                        </li>
+                                    </ul>
+
+
+                                    <ul class="login">
+                                        <li>
+                                            <a href="{{ path('fos_user_registration_register') }}">Register</a>
+                                        </li>
+                                    </ul>
+
+
+                                </div>
+{% block content %}
+
+{% endblock content %}
